@@ -10,9 +10,23 @@ export const getArticles = () => {
   });
 };
 
-
 export const GetArticle = (article_id) => {
-  return newsApi.get(`/api/articles/${article_id}`).then((response) => {
-    return response.data
-  })
-}
+  return Promise.all([
+    newsApi.get(`/api/articles/${article_id}`),
+    newsApi.get(`/api/articles/${article_id}/comments`),
+  ]).then(([articleResponse, commentsResponse]) => {
+    return {
+      article: articleResponse.data,
+      comments: commentsResponse.data,
+    };
+  });
+};
+
+
+// export const GetComments = (article_id) => {
+//   return newsApi
+//     .get(`/api/articles/${article_id}/comments`)
+//     .then((response) => {
+//       return response.data;
+//     });
+// };
