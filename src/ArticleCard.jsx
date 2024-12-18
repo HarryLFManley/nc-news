@@ -1,11 +1,12 @@
+import { Link } from "react-router";
+
 const ArticleCard = ({ article }) => {
+
   return (
     <>
-      <section>
-        <li>
-          <h2>{article.title}</h2>
-        </li>
-      </section>
+      <li>
+        <Link to={`/articles/${article.article_id}`}><h2>{article.title}</h2></Link>
+      </li>
     </>
   );
 };

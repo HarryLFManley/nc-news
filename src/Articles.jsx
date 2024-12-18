@@ -9,7 +9,7 @@ useEffect(() => {
     getArticles().then(({ articles }) => {
         setArticles(articles)
     })
-}, [articles])
+}, [])
 
   return (
     <>
