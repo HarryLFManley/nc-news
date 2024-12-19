@@ -86,6 +86,20 @@ ul {
   text-align: left;
 }
 
+.article-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.text-container {
+  text-align: left;
+}
+
+.image {
+  width: 200px;
+  padding-right: 10px;
+}
+
 .bold {
   font-weight: bold;
 }
