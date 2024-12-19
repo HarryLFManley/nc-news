@@ -22,11 +22,8 @@ export const GetArticle = (article_id) => {
   });
 };
 
-
-// export const GetComments = (article_id) => {
-//   return newsApi
-//     .get(`/api/articles/${article_id}/comments`)
-//     .then((response) => {
-//       return response.data;
-//     });
-// };
+export const addVotes = (article_id, votes) => {
+  return newsApi.patch(`/api/articles/${article_id}`, votes).then((response) => {
+    return response.data
+  })
+}
